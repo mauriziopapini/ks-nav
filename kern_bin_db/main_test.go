@@ -189,18 +189,6 @@ func TestMaintainer(t *testing.T) {
 
 // Tests the ability to extract the configuration from command line arguments
 func TestConfig(t *testing.T) {
-	var Default_config configuration = configuration{
-		LinuxWDebug:    "vmlinux",
-		LinuxWODebug:   "vmlinux.work",
-		StripBin:       "/usr/bin/strip",
-		DBDriver:       "postgres",
-		DBDSN:          "host=dbs.hqhome163.com port=5432 user=alessandro password=<password> dbname=kernel_bin sslmode=disable",
-		Maintainers_fn: "MAINTAINERS",
-		KConfig_fn:     "include/generated/autoconf.h",
-		KMakefile:      "Makefile",
-		Mode:           15,
-		Note:           "upstream",
-	}
 
 	os.Args = []string{"kern_bin_db"}
 	conf, err := args_parse(cmd_line_item_init())
